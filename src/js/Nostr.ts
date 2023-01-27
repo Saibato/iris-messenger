@@ -817,6 +817,7 @@ export default {
   },
   handleBoost(event: Event) {
     const id = event.tags.reverse().find((tag: any) => tag[0] === 'e')?.[1]; // last e tag is the liked post
+    event.tags.reverse()
     if (!id) return;
     if (!this.boostsByMessageId.has(id)) {
       this.boostsByMessageId.set(id, new Set());
